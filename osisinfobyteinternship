@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="temp calculator .css">
+</head>
+<body>
+    <div id="converter">
+        <h1>Temperature Converter</h1>
+        <label for="temperature">Temperature:</label>
+        <input type="number" id="temperature" placeholder="Enter temperature">
+
+        <label for="unit">Unit:</label>
+        <select id="unit">
+            <option value="celsius">Celsius</option>
+            <option value="fahrenheit">Fahrenheit</option>
+        </select> 
+        <button onclick="convertTemperature()">Convert</button> 
+        
+              
+        
+        <div id="result"></div>
+        <script src="temp calculator.js"></script>
+        
+    </header>
+</body>
+</html>
+for css
+*{
+padding: 0;
+margin: 0;
+
+}
+h1{
+    text-align: center;
+    font-size: 50px;
+    margin-top: 100px;
+}
+body{
+    background-color: aqua;
+
+}
+
+input[type="number"] {
+    width: 10%;
+    padding: 8px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+label {
+    display:inline-block
+    margin-bottom: 10px;
+}
+  
+p{
+    display: inline-block;
+    
+    
+    right: 50%;  
+    font-size: 19px;
+    font-weight: bold;
+    margin-top: 100px;
+    margin-right: 100px;
+    
+
+}
+button{
+    background-color: black;
+    color: white;
+}
+button:hover{
+
+    background-color: rgba(20, 6, 6, 0.527);
+}
+#result {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 15px;
+}
+for js
+function convertTemperature() {
+    var temperature = parseFloat(document.getElementById("temperature").value);
+    var unit = document.getElementById("unit").value;
+    var result = document.getElementById("result");
+
+    if (unit === "celsius") {
+        var fahrenheit = (temperature * 9 / 5) + 32;
+        result.innerHTML = temperature.toFixed(2) + " °C = " + fahrenheit.toFixed(2) + " °F";
+    } else {
+        var celsius = (temperature - 32) * 5 / 9;
+        result.innerHTML = temperature.toFixed(2) + " °F = " + celsius.toFixed(2) + " °C";
+    }
+}
+
